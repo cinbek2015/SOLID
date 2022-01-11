@@ -1,2 +1,5 @@
 #11.01.2022 18:32
-print("New OOP MFTI")
+def sum2(x, y):
+    return x ** y
+
+print("New OOP MFTI", sum2(4, 5))
