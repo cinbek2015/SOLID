@@ -4,11 +4,11 @@ class Life():
         print("class life")
 
 class ciliates(Life):
-    def cili(self):
+    def piri(self):
         print("class cili")
 
 class slipper(Life):
-    def slip(self):
+    def piri(self):
         print("class slipper")
 
 class People(ciliates, slipper):
@@ -17,6 +17,5 @@ class People(ciliates, slipper):
 
 Andru = People()
 Andru.pip()
-Andru.slip()
-Andru.cili()
+Andru.piri()
 Andru.lif()
