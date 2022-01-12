@@ -2,4 +2,5 @@
 def sum2(x, y):
     return x ** y
 
+
 print("New OOP MFTI", sum2(4, 5))
