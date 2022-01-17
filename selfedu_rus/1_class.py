@@ -1,3 +1,5 @@
+#17.01.2022
+
 class Point:
     color = "red"
     circle = 2
