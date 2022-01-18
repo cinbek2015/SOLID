@@ -1,7 +1,9 @@
 #18.01.2022
 class Monster:
+    count = 0 #счетчик создания объектов типа Monster
 
     def __new__(cls, *args, **kwargs):
+        cls.count += 1
         print("create new", cls)
         return super().__new__(cls)
 
@@ -13,5 +15,12 @@ class Monster:
     def get_attr(self):
         return (self.x, self.y)
 
-mn = Monster(12, 15)
-print(mn.get_attr())
+    @classmethod
+    def get_count(cls):
+        return cls.count
+
+t = [i for i in range(15)]
+for i in range(15):
+    t[i] = Monster(12, 15)
+print()
+print(t[0].get_count())
