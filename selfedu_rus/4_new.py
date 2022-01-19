@@ -1,5 +1,6 @@
 #18.01.2022
 class Monster:
+    "класс демонстрирующий __new__ и __init__"
     count = 0 #счетчик создания объектов типа Monster
 
     def __new__(cls, *args, **kwargs):
@@ -24,3 +25,4 @@ for i in range(15):
     t[i] = Monster(12, 15)
 print()
 print(t[0].get_count())
+print(t[0].__doc__)
