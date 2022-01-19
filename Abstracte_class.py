@@ -3,10 +3,6 @@ import math
 from abc import ABC, abstractmethod
 
 class Base:
-    def __init__(self, data, result):
-        self.data = data
-        self.result = result
-
     @abstractmethod
     def get_answer(self):
         pass
@@ -17,13 +13,10 @@ class Base:
     def get_loss(self):
         pass
 
-
-
 class A(Base):
     def __init__(self, data, result):
-        super().__init__(data, result)
-        # self.data = data
-        # self.result = result
+        self.data = data
+        self.result = result
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
@@ -39,13 +32,14 @@ class A(Base):
 
 class B(Base):
     def __init__(self, data, result):
-        super().__init__(data, result)
+        self.data = data
+        self.result = result
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
 
     def get_loss(self):
-        return sum([y * math.log(x) + (1 - y) * math.log(1 - x) for (x, y) in zip(self.data, self.result) ])
+        return sum([y * math.log(x) + (100 - y) * math.log(100 - x) for (x, y) in zip(self.data, self.result) ])
 
     def get_pre(self):
         ans = self.get_answer()
@@ -65,7 +59,8 @@ class B(Base):
 
 class C(Base):
     def __init__(self, data, result):
-        super().__init__(data, result)
+        self.data = data
+        self.result = result
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
@@ -83,5 +78,8 @@ print(a1.get_answer())
 print(a1.get_loss())
 print(a1.get_score())
 
-b1 = B([1,2,3,4,5], [9,8,7,6,5])
-print(b1.get_score(), b1.get_loss(), b1.get_pre(), b1.get_rec(), b1.get_answer())
+print()
+b1 = B([34,45,23,23,12], [9,8,7,6,5])
+print(b1.get_score())
+print(b1.get_loss())
+# print(b1.get_pre(), b1.get_rec(), b1.get_answer())
