@@ -5,15 +5,19 @@ class Integer:
     def __init__(self, x):
         self.__x = x
 
-    def __eq__(self, other):
-        if not isinstance(other, Integer):
+    @classmethod
+    def check_Integer(cls, other):
+        if not isinstance(other, cls):
             raise ValueError("нельзя сравнивать разные объекты")
-        return self.__x == other.__x
+        return True
+
+    def __eq__(self, other):
+        if self.check_Integer(other):
+            return self.__x == other.__x
 
     def __gt__(self, other):
-        if not isinstance(other, Integer):
-            raise ValueError ("нельзя сравнивать разные объекты")
-        return self.__x > other.__x
+        if self.check_Integer(other):
+            return self.__x > other.__x
 
 i1 = Integer(500)
 i2 = Integer(200)
