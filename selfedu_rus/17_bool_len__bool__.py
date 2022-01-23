@@ -16,5 +16,9 @@ class Point:
         print("__bool__")
         return self.__x == self.__y
 
-p = Point(12, 12)
-print(bool(p))
+p = Point(12, 1)
+
+if p:
+    print("объект p возвращает True")
+else:
+    print("Объект p возращает False")
