@@ -4,8 +4,8 @@ class Geom:
     "класс демонстрирующий работу  super()"
     def __init__(self, x, y):
         print("__init__ Geom")
-        self.__x = x
-        self.__y = y
+        self._x = x
+        self._y = y
         self._fill = 0
 
 class Line(Geom):
