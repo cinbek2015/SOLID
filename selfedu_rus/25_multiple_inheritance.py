@@ -3,7 +3,7 @@
 class Shop:
 
     def __init__(self, name, price, weight):
-        super().__init__()#
+        super().__init__()#инициализация второго класса
         self._name = name
         self._price = price
         self._weight = weight
