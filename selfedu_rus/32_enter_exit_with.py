@@ -14,7 +14,7 @@ class Defender:
     def __exit__(self, exc_type, exc_val, exc_tb):
         if exc_type is None:
             self.__v[:] = self._temp
-
+        #для нормальной работы должна возвращать False иначет True
         return False
 
 v1 = [1, 2, 3]
