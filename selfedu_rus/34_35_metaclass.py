@@ -15,11 +15,13 @@ def metaclass_creator(name, base, attr):
     return type(name, base, attr)
 
 class MyClass(metaclass=metaclass_creator):
-    def myfunc(self):
+    def get_myfunc(self):
         return (0, 0)
 
 mycl = MyClass()
-print("MyClass example", mycl.myfunc())
+print('*'*20)
+print("MyClass example", mycl.get_myfunc(), mycl.MAX_COORD)
+print('*'*20)
 #********************************************************
 #создаем метакласс
 class Meta(type):
