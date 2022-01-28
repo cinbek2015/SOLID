@@ -1,7 +1,6 @@
 #20.01.2022
 class Integer:
-    """Дескриптор данных
-    все дескрипторы интерфейсы"""
+    """Дескриптор данных"""
     @classmethod
     def examination_value(cls, value):
         if type(value) != int:
@@ -20,7 +19,7 @@ class Integer:
         # instance.__dict__[self.name] = value
 
 class Point3D:
-    "создаем три объекта интерфейса"
+    "создаем три объекта Дескриптора"
     x = Integer()
     y = Integer()
     z = Integer()
