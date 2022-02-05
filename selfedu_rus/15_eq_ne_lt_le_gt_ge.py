@@ -3,7 +3,7 @@
 class Integer:
 
     def __init__(self, x):
-        self.__x = x
+        self._x = x
 
     @classmethod
     def check_Integer(cls, other):
@@ -13,11 +13,13 @@ class Integer:
 
     def __eq__(self, other):
         if self.check_Integer(other):
-            return self.__x == other.__x
+            return self._x == other._x
 
     def __gt__(self, other):
         if self.check_Integer(other):
-            return self.__x > other.__x
+            return self._x > other._x
+
+
 
 i1 = Integer(500)
 i2 = Integer(200)
